@@ -1,0 +1,354 @@
+{
+    "entities/default_light.entity": {
+        "components": {
+            "light": {
+                "color": [
+                    0.8,
+                    0.8,
+                    0.8
+                ],
+                "type": "DirectionalLight"
+            },
+            "transform": {
+                "rotation": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    -0.557,
+                    0.557,
+                    0.557
+                ]
+            }
+        }
+    },
+    "entities/default_light_2.entity": {
+        "components": {
+            "light": {
+                "color": [
+                    0.2,
+                    0.2,
+                    0.3
+                ],
+                "type": "DirectionalLight"
+            },
+            "transform": {
+                "rotation": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0.557,
+                    -0.557,
+                    -0.557
+                ]
+            }
+        }
+    },
+    "missing_libraryRefs": [],
+    "project.project": {
+        "backgroundColor": [
+            0.75,
+            0.76,
+            0.78,
+            1
+        ],
+        "created": "2014-01-27T17:43:48.890492+00:00",
+        "deleted": false,
+        "edit": [],
+        "entityRefs": [
+            "round/entities/Sphere01.entity",
+            "round/entities/RootNode.entity",
+            "round/entities/Camera.entity",
+            "entities/default_light.entity",
+            "entities/default_light_2.entity"
+        ],
+        "fogColor": [
+            1,
+            1,
+            1
+        ],
+        "fogFar": 1000,
+        "fogNear": 0,
+        "globalAmbient": [
+            0,
+            0,
+            0
+        ],
+        "groupRefs": [
+            "root.group",
+            "round/round.group"
+        ],
+        "id": "fvX9U3LsSCu9qB5SudlaoA",
+        "licenseType": "CC0",
+        "modified": "2014-01-27T17:59:24.766163+00:00",
+        "name": "Candy Jam",
+        "originalLicenseType": null,
+        "own": [
+            "h9AeW1X3S1WZYADWuViCyw"
+        ],
+        "parent": null,
+        "public": true,
+        "ref": "project.project",
+        "skybox": {
+            "environmentType": 1,
+            "imageUrls": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "rotation": 0,
+            "shape": "Box"
+        },
+        "useFog": false,
+        "view": []
+    },
+    "root.group": {
+        "libraryRefs": [
+            "entities/default_light.entity",
+            "entities/default_light_2.entity"
+        ],
+        "name": "root",
+        "ref": "root.group"
+    },
+    "round/entities/Camera.entity": {
+        "components": {
+            "camera": {
+                "aspect": 1,
+                "far": 1000,
+                "fov": 45,
+                "lockedRatio": false,
+                "near": 1,
+                "projectionMode": 0,
+                "size": 100
+            },
+            "transform": {
+                "rotation": [
+                    0,
+                    0,
+                    0
+                ],
+                "scale": [
+                    1,
+                    1,
+                    1
+                ],
+                "translation": [
+                    0,
+                    0,
+                    20
+                ]
+            }
+        },
+        "name": "View Cam",
+        "ref": "round/entities/Camera.entity"
+    },
+    "round/entities/RootNode.entity": {
+        "components": {
+            "transform": {
+                "rotation": [
+                    0.0,
+                    -0.0,
+                    0.0
+                ],
+                "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "translation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        "name": "round",
+        "nodeType": "Null"
+    },
+    "round/entities/Sphere01.entity": {
+        "components": {
+            "meshData": {
+                "meshRef": "round/meshes/Sphere01.mesh"
+            },
+            "meshRenderer": {
+                "castShadows": true,
+                "cullMode": "Dynamic",
+                "hidden": false,
+                "materialRefs": [
+                    "round/materials/DefaultMaterial.material"
+                ],
+                "receiveShadows": true,
+                "reflectable": false
+            },
+            "transform": {
+                "parentRef": "round/entities/RootNode.entity",
+                "rotation": [
+                    -90,
+                    0,
+                    0
+                ],
+                "scale": [
+                    0.01,
+                    0.01,
+                    0.01
+                ],
+                "translation": [
+                    0,
+                    0,
+                    0
+                ]
+            }
+        },
+        "name": "Mesh",
+        "nodeType": "Mesh",
+        "ref": "round/entities/Sphere01.entity"
+    },
+    "round/materials/DefaultMaterial.material": {
+        "blendState": {
+            "blendDst": "OneMinusSrcAlphaFactor",
+            "blendEquation": "AddEquation",
+            "blendSrc": "SrcAlphaFactor",
+            "blending": "NoBlending"
+        },
+        "name": "DefaultMaterial",
+        "renderQueue": -1,
+        "shaderRef": "GOO_ENGINE_SHADERS/uber",
+        "texturesMapping": {},
+        "type": "Phong",
+        "uniforms": {
+            "discardThreshold": {
+                "enabled": false,
+                "value": 0.0
+            },
+            "fresnel": {
+                "enabled": true,
+                "value": 0.0
+            },
+            "materialAmbient": {
+                "enabled": true,
+                "value": [
+                    0.2,
+                    0.2,
+                    0.2,
+                    1.0
+                ]
+            },
+            "materialDiffuse": {
+                "enabled": true,
+                "value": [
+                    0.8,
+                    0.8,
+                    0.8,
+                    1.0
+                ]
+            },
+            "materialEmissive": {
+                "enabled": true,
+                "value": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                ]
+            },
+            "materialSpecular": {
+                "enabled": true,
+                "value": [
+                    0.2,
+                    0.2,
+                    0.2,
+                    1.0
+                ]
+            },
+            "materialSpecularPower": {
+                "enabled": true,
+                "value": 20.0
+            },
+            "normalMultiplier": {
+                "enabled": true,
+                "value": 1.0
+            },
+            "opacity": {
+                "enabled": true,
+                "value": 1.0
+            },
+            "reflectivity": {
+                "enabled": true,
+                "value": 0.0
+            }
+        }
+    },
+    "round/meshes/Sphere01.mesh": {
+        "binaryRef": "round/binaries/1390845355_data.bin",
+        "boundingVolume": {
+            "max": [
+                50.0,
+                50.0,
+                50.0
+            ],
+            "min": [
+                -50.0,
+                -50.0,
+                -50.0
+            ],
+            "type": "BoundingBox"
+        },
+        "colors": [],
+        "indexLengths": [
+            2880
+        ],
+        "indexModes": [
+            "Triangles"
+        ],
+        "indices": [
+            0,
+            2880,
+            "uint16"
+        ],
+        "name": "Sphere01",
+        "normals": [
+            12468,
+            1677,
+            "float32"
+        ],
+        "tangents": [
+            19176,
+            2236,
+            "float32"
+        ],
+        "textureCoords": [
+            [
+                28120,
+                1118,
+                "float32"
+            ]
+        ],
+        "type": "Mesh",
+        "vertexCount": 559,
+        "vertices": [
+            5760,
+            1677,
+            "float32"
+        ]
+    },
+    "round/round.group": {
+        "libraryRefs": [
+            "round/entities/Sphere01.entity",
+            "round/materials/DefaultMaterial.material",
+            "round/meshes/Sphere01.mesh",
+            "round/entities/RootNode.entity",
+            "round/binaries/1390845355_data.bin",
+            "round/entities/Camera.entity"
+        ],
+        "name": "round",
+        "ref": "round/round.group"
+    }
+}
