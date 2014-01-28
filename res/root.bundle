@@ -64,6 +64,8 @@
             "round/entities/Sphere01.entity",
             "round/entities/RootNode.entity",
             "round/entities/Camera.entity",
+            "slice_effect/entities/RootNode.entity",
+            "slice_effect/entities/Plane01.entity",
             "entities/default_light.entity",
             "entities/default_light_2.entity"
         ],
@@ -81,11 +83,12 @@
         ],
         "groupRefs": [
             "root.group",
-            "round/round.group"
+            "round/round.group",
+            "slice_effect/slice_effect.group"
         ],
         "id": "fvX9U3LsSCu9qB5SudlaoA",
         "licenseType": "CC0",
-        "modified": "2014-01-27T17:59:24.766163+00:00",
+        "modified": "2014-01-28T13:57:00.735315+00:00",
         "name": "Candy Jam",
         "originalLicenseType": null,
         "own": [
@@ -350,5 +353,206 @@
         ],
         "name": "round",
         "ref": "round/round.group"
+    },
+    "slice_effect/entities/Plane01.entity": {
+        "components": {
+            "meshData": {
+                "meshRef": "slice_effect/meshes/Plane01.mesh"
+            },
+            "meshRenderer": {
+                "castShadows": true,
+                "cullMode": "Dynamic",
+                "hidden": false,
+                "materialRefs": [
+                    "slice_effect/materials/01_-_Default.material"
+                ],
+                "receiveShadows": true,
+                "reflectable": false
+            },
+            "transform": {
+                "parentRef": "slice_effect/entities/RootNode.entity",
+                "rotation": [
+                    0,
+                    0,
+                    0
+                ],
+                "scale": [
+                    0.005,
+                    0.005,
+                    0.005
+                ],
+                "translation": [
+                    0,
+                    0,
+                    0
+                ]
+            }
+        },
+        "name": "Mesh",
+        "nodeType": "Mesh",
+        "ref": "slice_effect/entities/Plane01.entity"
+    },
+    "slice_effect/entities/RootNode.entity": {
+        "components": {
+            "transform": {
+                "rotation": [
+                    0,
+                    0,
+                    0
+                ],
+                "scale": [
+                    1,
+                    1,
+                    1
+                ],
+                "translation": [
+                    0,
+                    0,
+                    0
+                ]
+            }
+        },
+        "name": "slice_effect",
+        "nodeType": "Null",
+        "ref": "slice_effect/entities/RootNode.entity"
+    },
+    "slice_effect/materials/01_-_Default.material": {
+        "blendState": {
+            "blendDst": "OneMinusSrcAlphaFactor",
+            "blendEquation": "AddEquation",
+            "blendSrc": "SrcAlphaFactor",
+            "blending": "NoBlending"
+        },
+        "name": "01 - Default",
+        "renderQueue": -1,
+        "shaderRef": "GOO_ENGINE_SHADERS/uber",
+        "texturesMapping": {},
+        "type": "Phong",
+        "uniforms": {
+            "discardThreshold": {
+                "enabled": false,
+                "value": 0.0
+            },
+            "fresnel": {
+                "enabled": true,
+                "value": 0.0
+            },
+            "materialAmbient": {
+                "enabled": true,
+                "value": [
+                    0.5882353186607361,
+                    0.5882353186607361,
+                    0.5882353186607361,
+                    1.0
+                ]
+            },
+            "materialDiffuse": {
+                "enabled": true,
+                "value": [
+                    0.5882353186607361,
+                    0.5882353186607361,
+                    0.5882353186607361,
+                    1.0
+                ]
+            },
+            "materialEmissive": {
+                "enabled": true,
+                "value": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                ]
+            },
+            "materialSpecular": {
+                "enabled": true,
+                "value": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                ]
+            },
+            "materialSpecularPower": {
+                "enabled": true,
+                "value": 1.9999999173704188
+            },
+            "normalMultiplier": {
+                "enabled": true,
+                "value": 1.0
+            },
+            "opacity": {
+                "enabled": true,
+                "value": 1.0
+            },
+            "reflectivity": {
+                "enabled": true,
+                "value": 0.0
+            }
+        }
+    },
+    "slice_effect/meshes/Plane01.mesh": {
+        "binaryRef": "slice_effect/binaries/1390917390_data.bin",
+        "boundingVolume": {
+            "max": [
+                100.0,
+                50.0,
+                2.320066002425849e-06
+            ],
+            "min": [
+                0.0,
+                -50.0,
+                -2.051072826247948e-06
+            ],
+            "type": "BoundingBox"
+        },
+        "colors": [],
+        "indexLengths": [
+            6
+        ],
+        "indexModes": [
+            "Triangles"
+        ],
+        "indices": [
+            0,
+            6,
+            "uint8"
+        ],
+        "name": "Plane01",
+        "normals": [
+            56,
+            12,
+            "float32"
+        ],
+        "tangents": [
+            104,
+            16,
+            "float32"
+        ],
+        "textureCoords": [
+            [
+                168,
+                8,
+                "float32"
+            ]
+        ],
+        "type": "Mesh",
+        "vertexCount": 4,
+        "vertices": [
+            8,
+            12,
+            "float32"
+        ]
+    },
+    "slice_effect/slice_effect.group": {
+        "libraryRefs": [
+            "slice_effect/entities/RootNode.entity",
+            "slice_effect/materials/01_-_Default.material",
+            "slice_effect/meshes/Plane01.mesh",
+            "slice_effect/entities/Plane01.entity",
+            "slice_effect/binaries/1390917390_data.bin"
+        ],
+        "name": "slice_effect",
+        "ref": "slice_effect/slice_effect.group"
     }
 }

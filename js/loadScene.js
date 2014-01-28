@@ -115,6 +115,12 @@ require([
 			// array of object pools
 			Game.pool = [];
 
+			// used to track where the slice began and ended
+			Game.hitPlane = new Plane(new Vector3(0,0,1), 0);
+			// used to store return values from Vector math functions
+			Game.hitPos = new Vector3(0,0,0);
+			Game.oldHitPos = new Vector3(0,0,0);
+
 			// create an object pool to handle generating
 			// 'new' objects, this is good to reduce
 			// garbage collection and recyle objects
@@ -128,26 +134,13 @@ require([
 				// pool of objects
 				this.pool = [];
 			}
-			// creates a new entity and returns it
 			ObjectPool.prototype.create = function(){
 				// clone the ref
 				var ent = EntityUtils.clone(Game.world, Game.ref[this.refID]);
-				// set the entity with the meshRendererComponent to have a hitMask of 1
-				ent.transformComponent.children[0].entity.hitMask = 1;
 				// give it a unique name
 				ent.name = this.objType + ":" + (this.count++);
 				// tell the entity the refID, so it can remove itself later
 				ent.refID = this.refID;
-				// speed of the candy
-				ent.speed = 0;
-				// rotation of the candy
-				ent.rad = 0;
-				// acceleration of the candy
-				ent.acc = new Vector3();
-				// velocity of the candy
-				ent.vel = new Vector3();
-				//ent.speed = new Vector3();
-				// return the entity
 				return ent;
 			}
 			// gets a new entity from the pool, or returns one
@@ -161,12 +154,58 @@ require([
 				// remove and return the first object in the pool (index 0)
 				return this.pool.shift();
 			}
-			// removes the entity from its object pool
 			ObjectPool.prototype.remove = function(ent){
+				console.log("ObjectPool.rmove:"+ent);
 				ent.removeFromWorld();
-				Game.unregister("Update", ent);
 				this.pool.push(ent);
 			}
+
+			var CandyPool = function(refID, objType){
+				ObjectPool.call(this, refID, objType);
+			}
+			CandyPool.prototype = Object.create(ObjectPool.prototype);
+			CandyPool.prototype.constructor = CandyPool;
+
+			CandyPool.prototype.create = function(){
+				// call the 'super' function create
+				var ent = ObjectPool.prototype.create.call(this);
+				// set the entity with the meshRendererComponent to have a hitMask of 1
+				ent.transformComponent.children[0].entity.hitMask = 1;
+				// speed of the candy
+				ent.speed = 0;
+				// rotation of the candy
+				ent.rad = 0;
+				// acceleration of the candy
+				ent.acc = new Vector3();
+				// velocity of the candy
+				ent.vel = new Vector3();
+				// return the entity
+				return ent;
+			}
+
+			// removes the entity from its object pool
+			CandyPool.prototype.remove = function(ent){
+				// call the 'super' remove function
+				ObjectPool.prototype.remove.call(this,ent);
+				// stop updating the object
+				Game.unregister("Update", ent);
+			}
+
+			var SlicePool = function(refID, objType){
+				ObjectPool.call(this, refID, objType);
+			}
+			SlicePool.prototype = Object.create(ObjectPool.prototype);
+			SlicePool.prototype.constructor = SlicePool;
+
+			// removes the entity from its object pool
+			SlicePool.prototype.remove = function(ent){
+				// call the 'super' remove function
+				ObjectPool.prototype.remove.call(this,ent);
+				ent.opacity = 1.0;
+				// stop updating the object
+				Game.unregister("Update", ent);
+			}
+
 
 			loader.loadFromBundle('project.project', 'root.bundle', {recursive: false, preloadBinaries: true}).then(function(configs) {
 				console.log(configs);
@@ -175,16 +214,24 @@ require([
 				// add the entity reference to the ref array
 				Game.ref.push(loader.getCachedObjectForRef("round/entities/RootNode.entity"));
 				// create and add a new Object pool for the entity ref
-				Game.pool.push(new ObjectPool(0, "Round"));
+				Game.pool.push(new CandyPool(0, "Round"));
 				// remove the ref from the world
 				Game.ref[0].removeFromWorld();
+
+				// this needs to be added to the pools at the very end
+				Game.ref.push(loader.getCachedObjectForRef("slice_effect/entities/RootNode.entity"));
+				Game.pool.push(new SlicePool(Game.ref.length-1, "Slice"));
+				Game.ref[Game.ref.length-1].removeFromWorld();
+
+				
 				// keep track of objects scliced
 				Game.sliced = {};
 				// keep track of the last hit information
 				Game.oldHit = null;
 				// track the time the next candy should spawn
 				Game.nextCandy = 0.0;
-
+				// store the direction info the slice
+				Game.slashDir = new Vector3();
 				
 				// number of types of candy
 				var maxCandy = 1;
@@ -232,6 +279,78 @@ require([
 					this.acc.x = 0;
 					this.acc.y = 0;
 				}
+				Input.assignMouseButtonToAction(1, "Slice");
+				Game.register("Slice", Game, mouseInput);
+				function mouseInput(bool0){
+					if(true == bool0){
+						Game.viewCam.cameraComponent.camera.getPickRay(
+						   Input.mousePosition.x,
+						   Input.mousePosition.y,
+						   Game.renderer.viewportWidth,
+						   Game.renderer.viewportHeight,
+						   Game.ray);
+						// check if the ray hit the plane (it should)
+						// store the position of the hit as Game.hitPos
+						Game.hitPlane.rayIntersect(Game.ray, Game.oldHitPos);					}
+					else{
+						// assign the ray position and direction to the Game.ray
+						Game.viewCam.cameraComponent.camera.getPickRay(
+						   Input.mousePosition.x,
+						   Input.mousePosition.y,
+						   Game.renderer.viewportWidth,
+						   Game.renderer.viewportHeight,
+						   Game.ray);
+
+						// check if the ray hit the plane (it should)
+						// store the position of the hit as Game.hitPos
+						Game.hitPlane.rayIntersect(Game.ray, Game.hitPos);
+
+						// subtract the start and end positions
+						Vector3.sub(Game.hitPos, Game.oldHitPos,  Game.slashDir);
+
+						// if the slash mark is longer than a certain amount
+						if(Game.slashDir.length() > 1){
+
+							// get a new slash object from the pool
+							var slash = Game.pool[Game.pool.length-1].getObject();
+							// position it at the current hitPos (where we started to slash)
+							slash.transformComponent.setTranslation(Game.oldHitPos);
+							
+							// use Math.atan2 to get the rad value of the direction
+							var rad = Math.atan2(Game.slashDir.y, Game.slashDir.x);
+							// use the rad value to rotate the slash around the Z axis
+							slash.transformComponent.transform.rotation.fromAngles(0,0,rad);
+							// use the length of the start and end positions to change the scale of the slash mark
+							slash.transformComponent.setScale(Game.slashDir.length()*2, 0.5, 1);
+							// create the time duration to remove the slash mark (0.5 seconds)
+							slash.fadeTime = Time.time + 0.5;
+							// this is used for a future feature to fade the object out, set it to full opacity at first
+							slash.opacity = 1.0;
+							// set the entity to get updates
+							Game.register("Update", slash, slashFade);
+							// update the slash entity transform data
+							slash.transformComponent.setUpdated();
+							// add it to the world.
+							slash.addToWorld();
+							
+
+							// remove the slashed objects from the game
+							for(var i in Game.sliced){
+								Game.pool[Game.sliced[i].refID].remove(Game.sliced[i]);
+							}
+						}
+						Game.sliced = {};
+						
+					}
+				}
+				function slashFade(){
+					if(this.fadeTime < Time.time){
+						this.opacity -= Time.dt*5;
+						if(this.opacity <= 0){
+							Game.pool[this.refID].remove(this);
+						}
+					}
+				}
 
 				Game.register('Update', Game, gameUpdate);
 
@@ -241,6 +360,7 @@ require([
 						Game.nextCandy = Time.time + 0.5 + Math.random();
 						spawnNewCandy();
 					}
+					if(true == Input.Action.Slice){
 					// use the camera to populate the information into the Game.ray
 					Game.viewCam.cameraComponent.camera.getPickRay(
 					   Input.mousePosition.x,
@@ -276,10 +396,7 @@ require([
 						// if we hit an entity previously...
 						if(Game.oldHit != null){
 							Game.oldHit = null;
-							for(var i in Game.sliced){
-								Game.pool[Game.sliced[i].refID].remove(Game.sliced[i]);
-							}
-							Game.sliced = {};
+						}
 						}
 					}
 				}
