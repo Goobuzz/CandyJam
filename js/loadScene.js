@@ -353,6 +353,10 @@ require([
 				}
 				Input.assignMouseButtonToAction(1, "Slice");
 				Game.register("Slice", Game, mouseInput);
+				var music = new Howl({urls: ['res/sfx/music.ogg'], volume:1});
+				music.play();
+				var swipe = new Howl({urls: ['res/sfx/swipe.ogg'], volume:1});
+				var splat = new Howl({urls: ['res/sfx/splat.ogg'], volume:1});
 				function mouseInput(bool0){
 					if(true == bool0){
 						Game.viewCam.cameraComponent.camera.getPickRay(
@@ -405,6 +409,7 @@ require([
 							// add it to the world.
 							slash.addToWorld();
 							
+							swipe.play();
 
 							// remove the slashed objects from the game
 							for(var i in Game.sliced){
@@ -466,12 +471,14 @@ require([
 								Game.oldHit = hit;
 								// add the entity to the sliced map
 								Game.sliced[hit.entity.name] = hit.entity;
+								splat.play();
 							}
 						}
 						else{
 							Game.oldHit = hit;
 							// add the entity to the sliced map
 							Game.sliced[hit.entity.name] = hit.entity;
+							splat.play();
 						}
 					}
 					else{
