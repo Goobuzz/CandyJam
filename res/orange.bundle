@@ -1,0 +1,534 @@
+{
+    "missing_libraryRefs": [],
+    "orange/entities/RootNode.entity": {
+        "components": {
+            "transform": {
+                "rotation": [
+                    0,
+                    0,
+                    0
+                ],
+                "scale": [
+                    1,
+                    1,
+                    1
+                ],
+                "translation": [
+                    0,
+                    0,
+                    0
+                ]
+            }
+        },
+        "name": "orange",
+        "nodeType": "Null",
+        "ref": "orange/entities/RootNode.entity"
+    },
+    "orange/entities/orange.entity": {
+        "components": {
+            "meshData": {
+                "meshRef": "orange/meshes/orange.mesh"
+            },
+            "meshRenderer": {
+                "castShadows": true,
+                "cullMode": "Dynamic",
+                "hidden": false,
+                "materialRefs": [
+                    "orange/materials/orange_mat.material"
+                ],
+                "receiveShadows": true,
+                "reflectable": false
+            },
+            "transform": {
+                "parentRef": "orange/entities/RootNode.entity",
+                "rotation": [
+                    9.334667643000002e-06,
+                    0,
+                    0
+                ],
+                "scale": [
+                    1,
+                    0.9999999999999999,
+                    0.9999999999999999
+                ],
+                "translation": [
+                    0,
+                    0,
+                    0
+                ]
+            }
+        },
+        "name": "Mesh",
+        "nodeType": "Mesh",
+        "ref": "orange/entities/orange.entity"
+    },
+    "orange/materials/orange_mat.material": {
+        "blendState": {
+            "blendDst": "OneMinusSrcAlphaFactor",
+            "blendEquation": "AddEquation",
+            "blendSrc": "SrcAlphaFactor",
+            "blending": "NoBlending"
+        },
+        "cullState": {
+            "cullFace": "Back",
+            "enabled": true,
+            "frontFace": "CCW"
+        },
+        "depthState": {
+            "enabled": true,
+            "write": true
+        },
+        "name": "orange_mat",
+        "ref": "orange/materials/orange_mat.material",
+        "renderQueue": 1000,
+        "shaderRef": "GOO_ENGINE_SHADERS/uber",
+        "texturesMapping": {},
+        "type": "Lambert",
+        "uniforms": {
+            "discardThreshold": {
+                "enabled": false,
+                "value": 0
+            },
+            "fresnel": {
+                "enabled": true,
+                "value": 0
+            },
+            "materialAmbient": {
+                "enabled": true,
+                "value": [
+                    0.11818181818181817,
+                    0.04641322314049586,
+                    0,
+                    1
+                ]
+            },
+            "materialDiffuse": {
+                "enabled": true,
+                "value": [
+                    0.8363636363636364,
+                    0.419702479338843,
+                    0,
+                    1
+                ]
+            },
+            "materialEmissive": {
+                "enabled": true,
+                "value": [
+                    0,
+                    0,
+                    0,
+                    1
+                ]
+            },
+            "materialSpecular": {
+                "enabled": true,
+                "value": [
+                    0.8727272727272728,
+                    0.5712396694214876,
+                    0,
+                    1
+                ]
+            },
+            "materialSpecularPower": {
+                "enabled": true,
+                "value": 5
+            },
+            "normalMultiplier": {
+                "enabled": true,
+                "value": 1
+            },
+            "opacity": {
+                "enabled": true,
+                "value": 1
+            },
+            "reflectivity": {
+                "enabled": true,
+                "value": 0
+            }
+        }
+    },
+    "orange/meshes/orange.mesh": {
+        "binaryRef": "orange/binaries/1391116733_data.bin",
+        "boundingVolume": {
+            "max": [
+                0.738502,
+                0.72673,
+                0.734246
+            ],
+            "min": [
+                -0.738502,
+                -0.72673,
+                -0.734246
+            ],
+            "type": "BoundingBox"
+        },
+        "colors": [],
+        "indexLengths": [
+            576
+        ],
+        "indexModes": [
+            "Triangles"
+        ],
+        "indices": [
+            0,
+            576,
+            "uint8"
+        ],
+        "name": "Utf8_error_0",
+        "normals": [
+            2256,
+            420,
+            "float32"
+        ],
+        "tangents": [
+            3936,
+            560,
+            "float32"
+        ],
+        "textureCoords": [
+            [
+                6176,
+                280,
+                "float32"
+            ]
+        ],
+        "type": "Mesh",
+        "vertexCount": 140,
+        "vertices": [
+            576,
+            420,
+            "float32"
+        ]
+    },
+    "orange/orange.group": {
+        "libraryRefs": [
+            "orange/entities/orange.entity",
+            "orange/entities/RootNode.entity",
+            "orange/materials/orange_mat.material",
+            "orange/meshes/orange.mesh",
+            "orange/binaries/1391116733_data.bin"
+        ],
+        "name": "orange",
+        "ref": "orange/orange.group"
+    },
+    "orange_left/entities/RootNode.entity": {
+        "components": {
+            "transform": {
+                "rotation": [
+                    0,
+                    0,
+                    0
+                ],
+                "scale": [
+                    1,
+                    1,
+                    1
+                ],
+                "translation": [
+                    0,
+                    0,
+                    0
+                ]
+            }
+        },
+        "hidden": false,
+        "name": "orange_left",
+        "nodeType": "Null",
+        "ref": "orange_left/entities/RootNode.entity"
+    },
+    "orange_left/entities/orange_left.entity": {
+        "components": {
+            "meshData": {
+                "meshRef": "orange_left/meshes/orange_left.mesh"
+            },
+            "meshRenderer": {
+                "castShadows": true,
+                "cullMode": "Dynamic",
+                "hidden": false,
+                "materialRefs": [
+                    "orange/materials/orange_mat.material"
+                ],
+                "receiveShadows": true,
+                "reflectable": false
+            },
+            "transform": {
+                "parentRef": "orange_left/entities/RootNode.entity",
+                "rotation": [
+                    9.334667643000002e-06,
+                    0,
+                    0
+                ],
+                "scale": [
+                    1,
+                    0.9999999999999999,
+                    0.9999999999999999
+                ],
+                "translation": [
+                    0,
+                    0,
+                    0
+                ]
+            }
+        },
+        "name": "Mesh",
+        "nodeType": "Mesh",
+        "ref": "orange_left/entities/orange_left.entity"
+    },
+    "orange_left/meshes/orange_left.mesh": {
+        "binaryRef": "orange_left/binaries/1391116736_data.bin",
+        "boundingVolume": {
+            "max": [
+                0.007209,
+                0.72673,
+                0.734246
+            ],
+            "min": [
+                -0.738502,
+                -0.72673,
+                -0.734246
+            ],
+            "type": "BoundingBox"
+        },
+        "colors": [],
+        "indexLengths": [
+            420
+        ],
+        "indexModes": [
+            "Triangles"
+        ],
+        "indices": [
+            0,
+            420,
+            "uint8"
+        ],
+        "name": "Utf8_error_0",
+        "normals": [
+            1692,
+            318,
+            "float32"
+        ],
+        "tangents": [
+            2964,
+            424,
+            "float32"
+        ],
+        "textureCoords": [
+            [
+                4660,
+                212,
+                "float32"
+            ]
+        ],
+        "type": "Mesh",
+        "vertexCount": 106,
+        "vertices": [
+            420,
+            318,
+            "float32"
+        ]
+    },
+    "orange_left/orange_left.group": {
+        "libraryRefs": [
+            "orange_left/meshes/orange_left.mesh",
+            "orange_left/entities/orange_left.entity",
+            "orange_left/entities/RootNode.entity",
+            "orange_left/binaries/1391116736_data.bin"
+        ],
+        "name": "orange_left",
+        "ref": "orange_left/orange_left.group"
+    },
+    "orange_right/entities/RootNode.entity": {
+        "components": {
+            "transform": {
+                "rotation": [
+                    0,
+                    0,
+                    0
+                ],
+                "scale": [
+                    1,
+                    1,
+                    1
+                ],
+                "translation": [
+                    0,
+                    0,
+                    0
+                ]
+            }
+        },
+        "hidden": false,
+        "name": "orange_right",
+        "nodeType": "Null",
+        "ref": "orange_right/entities/RootNode.entity"
+    },
+    "orange_right/entities/orange_right.entity": {
+        "components": {
+            "meshData": {
+                "meshRef": "orange_right/meshes/orange_right.mesh"
+            },
+            "meshRenderer": {
+                "castShadows": true,
+                "cullMode": "Dynamic",
+                "hidden": false,
+                "materialRefs": [
+                    "orange/materials/orange_mat.material"
+                ],
+                "receiveShadows": true,
+                "reflectable": false
+            },
+            "transform": {
+                "parentRef": "orange_right/entities/RootNode.entity",
+                "rotation": [
+                    9.334667643000002e-06,
+                    0,
+                    0
+                ],
+                "scale": [
+                    1,
+                    0.9999999999999999,
+                    0.9999999999999999
+                ],
+                "translation": [
+                    0,
+                    0,
+                    0
+                ]
+            }
+        },
+        "name": "Mesh",
+        "nodeType": "Mesh",
+        "ref": "orange_right/entities/orange_right.entity"
+    },
+    "orange_right/meshes/orange_right.mesh": {
+        "binaryRef": "orange_right/binaries/1391116739_data.bin",
+        "boundingVolume": {
+            "max": [
+                0.738502,
+                0.722458,
+                0.734246
+            ],
+            "min": [
+                -0.020936,
+                -0.72673,
+                -0.734246
+            ],
+            "type": "BoundingBox"
+        },
+        "colors": [],
+        "indexLengths": [
+            420
+        ],
+        "indexModes": [
+            "Triangles"
+        ],
+        "indices": [
+            0,
+            420,
+            "uint8"
+        ],
+        "name": "Utf8_error_0",
+        "normals": [
+            1692,
+            318,
+            "float32"
+        ],
+        "tangents": [
+            2964,
+            424,
+            "float32"
+        ],
+        "textureCoords": [
+            [
+                4660,
+                212,
+                "float32"
+            ]
+        ],
+        "type": "Mesh",
+        "vertexCount": 106,
+        "vertices": [
+            420,
+            318,
+            "float32"
+        ]
+    },
+    "orange_right/orange_right.group": {
+        "libraryRefs": [
+            "orange_right/entities/orange_right.entity",
+            "orange_right/entities/RootNode.entity",
+            "orange_right/meshes/orange_right.mesh",
+            "orange_right/binaries/1391116739_data.bin"
+        ],
+        "name": "orange_right",
+        "ref": "orange_right/orange_right.group"
+    },
+    "project.project": {
+        "backgroundColor": [
+            0.75,
+            0.76,
+            0.78,
+            1
+        ],
+        "created": "2014-01-30T21:15:42.926730+00:00",
+        "deleted": false,
+        "edit": [],
+        "entityRefs": [
+            "orange/entities/orange.entity",
+            "orange/entities/RootNode.entity",
+            "orange_left/entities/orange_left.entity",
+            "orange_left/entities/RootNode.entity",
+            "orange_right/entities/orange_right.entity",
+            "orange_right/entities/RootNode.entity"
+        ],
+        "fogColor": [
+            1,
+            1,
+            1
+        ],
+        "fogFar": 1000,
+        "fogNear": 0,
+        "globalAmbient": [
+            0,
+            0,
+            0
+        ],
+        "groupRefs": [
+            "root.group",
+            "orange/orange.group",
+            "orange_left/orange_left.group",
+            "orange_right/orange_right.group"
+        ],
+        "id": "HlMsgKSXQp-XqcWnBhAzcQ",
+        "licenseType": "CC0",
+        "modified": "2014-01-30T21:19:30.445810+00:00",
+        "name": "Default Goo Project",
+        "originalLicenseType": null,
+        "own": [
+            "h9AeW1X3S1WZYADWuViCyw"
+        ],
+        "parent": null,
+        "public": true,
+        "ref": "project.project",
+        "skybox": {
+            "environmentType": 1,
+            "imageUrls": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "rotation": 0,
+            "shape": "Box"
+        },
+        "useFog": false,
+        "view": []
+    },
+    "root.group": {
+        "libraryRefs": [],
+        "name": "root",
+        "ref": "root.group"
+    }
+}

@@ -1,0 +1,533 @@
+{
+    "apple/apple.group": {
+        "libraryRefs": [
+            "apple/entities/apple.entity",
+            "apple/materials/apple_mat.material",
+            "apple/meshes/apple.mesh",
+            "apple/entities/RootNode.entity",
+            "apple/binaries/1391111650_data.bin"
+        ],
+        "name": "apple",
+        "ref": "apple/apple.group"
+    },
+    "apple/entities/RootNode.entity": {
+        "components": {
+            "transform": {
+                "rotation": [
+                    0,
+                    0,
+                    0
+                ],
+                "scale": [
+                    1,
+                    1,
+                    1
+                ],
+                "translation": [
+                    0,
+                    0,
+                    0
+                ]
+            }
+        },
+        "hidden": false,
+        "name": "apple",
+        "nodeType": "Null",
+        "ref": "apple/entities/RootNode.entity"
+    },
+    "apple/entities/apple.entity": {
+        "components": {
+            "meshData": {
+                "meshRef": "apple/meshes/apple.mesh"
+            },
+            "meshRenderer": {
+                "castShadows": true,
+                "cullMode": "Dynamic",
+                "materialRefs": [
+                    "apple/materials/apple_mat.material"
+                ],
+                "receiveShadows": true,
+                "reflectable": false
+            },
+            "transform": {
+                "parentRef": "apple/entities/RootNode.entity",
+                "rotation": [
+                    9.334667643000002e-06,
+                    -0.0,
+                    0.0
+                ],
+                "scale": [
+                    1.0,
+                    0.9999999999999999,
+                    0.9999999999999999
+                ],
+                "translation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        "name": "apple",
+        "nodeType": "Mesh"
+    },
+    "apple/materials/apple_mat.material": {
+        "blendState": {
+            "blendDst": "OneMinusSrcAlphaFactor",
+            "blendEquation": "AddEquation",
+            "blendSrc": "SrcAlphaFactor",
+            "blending": "NoBlending"
+        },
+        "cullState": {
+            "cullFace": "Back",
+            "enabled": true,
+            "frontFace": "CCW"
+        },
+        "depthState": {
+            "enabled": true,
+            "write": true
+        },
+        "name": "Apple",
+        "ref": "apple/materials/apple_mat.material",
+        "renderQueue": 1000,
+        "shaderRef": "GOO_ENGINE_SHADERS/uber",
+        "texturesMapping": {},
+        "type": "Lambert",
+        "uniforms": {
+            "discardThreshold": {
+                "enabled": false,
+                "value": 0
+            },
+            "fresnel": {
+                "enabled": true,
+                "value": 0
+            },
+            "materialAmbient": {
+                "enabled": true,
+                "value": [
+                    0.0636363636363636,
+                    0,
+                    0,
+                    1
+                ]
+            },
+            "materialDiffuse": {
+                "enabled": true,
+                "value": [
+                    0.8909090909090909,
+                    0,
+                    0,
+                    1
+                ]
+            },
+            "materialEmissive": {
+                "enabled": true,
+                "value": [
+                    0,
+                    0,
+                    0,
+                    1
+                ]
+            },
+            "materialSpecular": {
+                "enabled": true,
+                "value": [
+                    0.9727272727272728,
+                    0.7636793388429752,
+                    0.6809090909090909,
+                    1
+                ]
+            },
+            "materialSpecularPower": {
+                "enabled": true,
+                "value": 50
+            },
+            "normalMultiplier": {
+                "enabled": true,
+                "value": 1
+            },
+            "opacity": {
+                "enabled": true,
+                "value": 1
+            },
+            "reflectivity": {
+                "enabled": true,
+                "value": 0
+            }
+        }
+    },
+    "apple/meshes/apple.mesh": {
+        "binaryRef": "apple/binaries/1391111650_data.bin",
+        "boundingVolume": {
+            "max": [
+                0.807142,
+                0.856426,
+                0.801111
+            ],
+            "min": [
+                -0.807142,
+                -0.856427,
+                -0.801111
+            ],
+            "type": "BoundingBox"
+        },
+        "colors": [],
+        "indexLengths": [
+            756
+        ],
+        "indexModes": [
+            "Triangles"
+        ],
+        "indices": [
+            0,
+            756,
+            "uint8"
+        ],
+        "name": "Utf8_error_0",
+        "normals": [
+            3000,
+            561,
+            "float32"
+        ],
+        "tangents": [
+            5244,
+            748,
+            "float32"
+        ],
+        "textureCoords": [
+            [
+                8236,
+                374,
+                "float32"
+            ]
+        ],
+        "type": "Mesh",
+        "vertexCount": 187,
+        "vertices": [
+            756,
+            561,
+            "float32"
+        ]
+    },
+    "apple_left/apple_left.group": {
+        "libraryRefs": [
+            "apple_left/entities/RootNode.entity",
+            "apple_left/meshes/apple_left.mesh",
+            "apple_left/entities/apple_left.entity",
+            "apple_left/binaries/1391111660_data.bin"
+        ],
+        "name": "apple_left",
+        "ref": "apple_left/apple_left.group"
+    },
+    "apple_left/entities/RootNode.entity": {
+        "components": {
+            "transform": {
+                "rotation": [
+                    0,
+                    0,
+                    0
+                ],
+                "scale": [
+                    1,
+                    1,
+                    1
+                ],
+                "translation": [
+                    0,
+                    0,
+                    0
+                ]
+            }
+        },
+        "hidden": false,
+        "name": "apple_left",
+        "nodeType": "Null",
+        "ref": "apple_left/entities/RootNode.entity"
+    },
+    "apple_left/entities/apple_left.entity": {
+        "components": {
+            "meshData": {
+                "meshRef": "apple_left/meshes/apple_left.mesh"
+            },
+            "meshRenderer": {
+                "castShadows": true,
+                "cullMode": "Dynamic",
+                "hidden": false,
+                "materialRefs": [
+                    "apple/materials/apple_mat.material"
+                ],
+                "receiveShadows": true,
+                "reflectable": false
+            },
+            "transform": {
+                "parentRef": "apple_left/entities/RootNode.entity",
+                "rotation": [
+                    9.334667643000002e-06,
+                    0,
+                    0
+                ],
+                "scale": [
+                    1,
+                    0.9999999999999999,
+                    0.9999999999999999
+                ],
+                "translation": [
+                    0,
+                    0,
+                    0
+                ]
+            }
+        },
+        "name": "apple_left",
+        "nodeType": "Mesh",
+        "ref": "apple_left/entities/apple_left.entity"
+    },
+    "apple_left/meshes/apple_left.mesh": {
+        "binaryRef": "apple_left/binaries/1391111660_data.bin",
+        "boundingVolume": {
+            "max": [
+                0.013709,
+                0.606413,
+                0.801111
+            ],
+            "min": [
+                -0.807142,
+                -0.856427,
+                -0.801111
+            ],
+            "type": "BoundingBox"
+        },
+        "colors": [],
+        "indexLengths": [
+            420
+        ],
+        "indexModes": [
+            "Triangles"
+        ],
+        "indices": [
+            0,
+            420,
+            "uint8"
+        ],
+        "name": "Utf8_error_0",
+        "normals": [
+            1692,
+            318,
+            "float32"
+        ],
+        "tangents": [
+            2964,
+            424,
+            "float32"
+        ],
+        "textureCoords": [
+            [
+                4660,
+                212,
+                "float32"
+            ]
+        ],
+        "type": "Mesh",
+        "vertexCount": 106,
+        "vertices": [
+            420,
+            318,
+            "float32"
+        ]
+    },
+    "apple_right/apple_right.group": {
+        "libraryRefs": [
+            "apple_right/entities/RootNode.entity",
+            "apple_right/meshes/apple_right.mesh",
+            "apple_right/entities/apple_right.entity",
+            "apple_right/binaries/1391111665_data.bin"
+        ],
+        "name": "apple_right",
+        "ref": "apple_right/apple_right.group"
+    },
+    "apple_right/entities/RootNode.entity": {
+        "components": {
+            "transform": {
+                "rotation": [
+                    0,
+                    0,
+                    0
+                ],
+                "scale": [
+                    1,
+                    1,
+                    1
+                ],
+                "translation": [
+                    0,
+                    0,
+                    0
+                ]
+            }
+        },
+        "hidden": false,
+        "name": "apple_right",
+        "nodeType": "Null",
+        "ref": "apple_right/entities/RootNode.entity"
+    },
+    "apple_right/entities/apple_right.entity": {
+        "components": {
+            "meshData": {
+                "meshRef": "apple_right/meshes/apple_right.mesh"
+            },
+            "meshRenderer": {
+                "castShadows": true,
+                "cullMode": "Dynamic",
+                "hidden": false,
+                "materialRefs": [
+                    "apple/materials/apple_mat.material"
+                ],
+                "receiveShadows": true,
+                "reflectable": false
+            },
+            "transform": {
+                "parentRef": "apple_right/entities/RootNode.entity",
+                "rotation": [
+                    9.334667643000002e-06,
+                    0,
+                    0
+                ],
+                "scale": [
+                    1,
+                    0.9999999999999999,
+                    0.9999999999999999
+                ],
+                "translation": [
+                    0,
+                    0,
+                    0
+                ]
+            }
+        },
+        "name": "Mesh",
+        "nodeType": "Mesh",
+        "ref": "apple_right/entities/apple_right.entity"
+    },
+    "apple_right/meshes/apple_right.mesh": {
+        "binaryRef": "apple_right/binaries/1391111665_data.bin",
+        "boundingVolume": {
+            "max": [
+                0.807142,
+                0.856426,
+                0.801111
+            ],
+            "min": [
+                -0.11921,
+                -0.856427,
+                -0.801111
+            ],
+            "type": "BoundingBox"
+        },
+        "colors": [],
+        "indexLengths": [
+            600
+        ],
+        "indexModes": [
+            "Triangles"
+        ],
+        "indices": [
+            0,
+            600,
+            "uint8"
+        ],
+        "name": "Utf8_error_0",
+        "normals": [
+            2436,
+            459,
+            "float32"
+        ],
+        "tangents": [
+            4272,
+            612,
+            "float32"
+        ],
+        "textureCoords": [
+            [
+                6720,
+                306,
+                "float32"
+            ]
+        ],
+        "type": "Mesh",
+        "vertexCount": 153,
+        "vertices": [
+            600,
+            459,
+            "float32"
+        ]
+    },
+    "missing_libraryRefs": [],
+    "project.project": {
+        "backgroundColor": [
+            0.75,
+            0.76,
+            0.78,
+            1
+        ],
+        "created": "2014-01-30T19:51:49.555238+00:00",
+        "deleted": false,
+        "edit": [],
+        "entityRefs": [
+            "apple/entities/apple.entity",
+            "apple/entities/RootNode.entity",
+            "apple_left/entities/RootNode.entity",
+            "apple_left/entities/apple_left.entity",
+            "apple_right/entities/RootNode.entity",
+            "apple_right/entities/apple_right.entity"
+        ],
+        "fogColor": [
+            1,
+            1,
+            1
+        ],
+        "fogFar": 1000,
+        "fogNear": 0,
+        "globalAmbient": [
+            0,
+            0,
+            0
+        ],
+        "groupRefs": [
+            "root.group",
+            "apple/apple.group",
+            "apple_left/apple_left.group",
+            "apple_right/apple_right.group"
+        ],
+        "id": "AQ6fbwfcR8qpqCPxsPsRxw",
+        "licenseType": "CC0",
+        "modified": "2014-01-30T20:01:09.147135+00:00",
+        "name": "Apple",
+        "originalLicenseType": null,
+        "own": [
+            "h9AeW1X3S1WZYADWuViCyw"
+        ],
+        "parent": null,
+        "public": true,
+        "ref": "project.project",
+        "skybox": {
+            "environmentType": 1,
+            "imageUrls": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "rotation": 0,
+            "shape": "Box"
+        },
+        "useFog": false,
+        "view": []
+    },
+    "root.group": {
+        "libraryRefs": [],
+        "name": "root",
+        "ref": "root.group"
+    }
+}

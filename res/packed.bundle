@@ -1,0 +1,534 @@
+{
+    "missing_libraryRefs": [],
+    "packed_candy/entities/RootNode.entity": {
+        "components": {
+            "transform": {
+                "rotation": [
+                    0,
+                    0,
+                    0
+                ],
+                "scale": [
+                    1,
+                    1,
+                    1
+                ],
+                "translation": [
+                    0,
+                    0,
+                    0
+                ]
+            }
+        },
+        "name": "packed_candy",
+        "nodeType": "Null",
+        "ref": "packed_candy/entities/RootNode.entity"
+    },
+    "packed_candy/entities/packed_candy.entity": {
+        "components": {
+            "meshData": {
+                "meshRef": "packed_candy/meshes/packed_candy.mesh"
+            },
+            "meshRenderer": {
+                "castShadows": true,
+                "cullMode": "Dynamic",
+                "hidden": false,
+                "materialRefs": [
+                    "packed_candy/materials/packed_candy_mat.material"
+                ],
+                "receiveShadows": true,
+                "reflectable": false
+            },
+            "transform": {
+                "parentRef": "packed_candy/entities/RootNode.entity",
+                "rotation": [
+                    90,
+                    0,
+                    0
+                ],
+                "scale": [
+                    1.5,
+                    1.5,
+                    1.5
+                ],
+                "translation": [
+                    0,
+                    0,
+                    0
+                ]
+            }
+        },
+        "name": "Mesh",
+        "nodeType": "Mesh",
+        "ref": "packed_candy/entities/packed_candy.entity"
+    },
+    "packed_candy/materials/packed_candy_mat.material": {
+        "blendState": {
+            "blendDst": "OneMinusSrcAlphaFactor",
+            "blendEquation": "AddEquation",
+            "blendSrc": "SrcAlphaFactor",
+            "blending": "NoBlending"
+        },
+        "cullState": {
+            "cullFace": "Back",
+            "enabled": true,
+            "frontFace": "CCW"
+        },
+        "depthState": {
+            "enabled": true,
+            "write": true
+        },
+        "name": "packed_candy_mat",
+        "ref": "packed_candy/materials/packed_candy_mat.material",
+        "renderQueue": 1000,
+        "shaderRef": "GOO_ENGINE_SHADERS/uber",
+        "texturesMapping": {},
+        "type": "Lambert",
+        "uniforms": {
+            "discardThreshold": {
+                "enabled": false,
+                "value": 0
+            },
+            "fresnel": {
+                "enabled": true,
+                "value": 0
+            },
+            "materialAmbient": {
+                "enabled": true,
+                "value": [
+                    0,
+                    0,
+                    0,
+                    1
+                ]
+            },
+            "materialDiffuse": {
+                "enabled": true,
+                "value": [
+                    0.08628099173553723,
+                    0.1183531179564238,
+                    0.5272727272727273,
+                    1
+                ]
+            },
+            "materialEmissive": {
+                "enabled": true,
+                "value": [
+                    0,
+                    0,
+                    0,
+                    1
+                ]
+            },
+            "materialSpecular": {
+                "enabled": true,
+                "value": [
+                    0,
+                    0.8181818181818181,
+                    0.684297520661157,
+                    1
+                ]
+            },
+            "materialSpecularPower": {
+                "enabled": true,
+                "value": 1
+            },
+            "normalMultiplier": {
+                "enabled": true,
+                "value": 1
+            },
+            "opacity": {
+                "enabled": true,
+                "value": 1
+            },
+            "reflectivity": {
+                "enabled": true,
+                "value": 0
+            }
+        }
+    },
+    "packed_candy/meshes/packed_candy.mesh": {
+        "binaryRef": "packed_candy/binaries/1391124453_data.bin",
+        "boundingVolume": {
+            "max": [
+                1.269107,
+                0.35105,
+                0.445745
+            ],
+            "min": [
+                -1.269107,
+                -0.35105,
+                -0.445745
+            ],
+            "type": "BoundingBox"
+        },
+        "colors": [],
+        "indexLengths": [
+            288
+        ],
+        "indexModes": [
+            "Triangles"
+        ],
+        "indices": [
+            0,
+            288,
+            "uint8"
+        ],
+        "name": "Utf8_error_0",
+        "normals": [
+            1152,
+            216,
+            "float32"
+        ],
+        "tangents": [
+            2016,
+            288,
+            "float32"
+        ],
+        "textureCoords": [
+            [
+                3168,
+                144,
+                "float32"
+            ]
+        ],
+        "type": "Mesh",
+        "vertexCount": 72,
+        "vertices": [
+            288,
+            216,
+            "float32"
+        ]
+    },
+    "packed_candy/packed_candy.group": {
+        "libraryRefs": [
+            "packed_candy/meshes/packed_candy.mesh",
+            "packed_candy/materials/packed_candy_mat.material",
+            "packed_candy/entities/packed_candy.entity",
+            "packed_candy/entities/RootNode.entity",
+            "packed_candy/binaries/1391124453_data.bin"
+        ],
+        "name": "packed_candy",
+        "ref": "packed_candy/packed_candy.group"
+    },
+    "packed_candy_left/entities/RootNode.entity": {
+        "components": {
+            "transform": {
+                "rotation": [
+                    0,
+                    0,
+                    0
+                ],
+                "scale": [
+                    1,
+                    1,
+                    1
+                ],
+                "translation": [
+                    0,
+                    0,
+                    0
+                ]
+            }
+        },
+        "hidden": false,
+        "name": "packed_candy_left",
+        "nodeType": "Null",
+        "ref": "packed_candy_left/entities/RootNode.entity"
+    },
+    "packed_candy_left/entities/packed_candy_left.entity": {
+        "components": {
+            "meshData": {
+                "meshRef": "packed_candy_left/meshes/packed_candy_left.mesh"
+            },
+            "meshRenderer": {
+                "castShadows": true,
+                "cullMode": "Dynamic",
+                "hidden": false,
+                "materialRefs": [
+                    "packed_candy/materials/packed_candy_mat.material"
+                ],
+                "receiveShadows": true,
+                "reflectable": false
+            },
+            "transform": {
+                "parentRef": "packed_candy_left/entities/RootNode.entity",
+                "rotation": [
+                    90,
+                    0,
+                    0
+                ],
+                "scale": [
+                    1.5,
+                    1.5,
+                    1.5
+                ],
+                "translation": [
+                    0,
+                    0,
+                    0
+                ]
+            }
+        },
+        "name": "Mesh",
+        "nodeType": "Mesh",
+        "ref": "packed_candy_left/entities/packed_candy_left.entity"
+    },
+    "packed_candy_left/meshes/packed_candy_left.mesh": {
+        "binaryRef": "packed_candy_left/binaries/1391124459_data.bin",
+        "boundingVolume": {
+            "max": [
+                -0.020582,
+                0.35105,
+                0.445745
+            ],
+            "min": [
+                -1.269107,
+                -0.35105,
+                -0.445745
+            ],
+            "type": "BoundingBox"
+        },
+        "colors": [],
+        "indexLengths": [
+            180
+        ],
+        "indexModes": [
+            "Triangles"
+        ],
+        "indices": [
+            0,
+            180,
+            "uint8"
+        ],
+        "name": "Utf8_error_0",
+        "normals": [
+            804,
+            156,
+            "float32"
+        ],
+        "tangents": [
+            1428,
+            208,
+            "float32"
+        ],
+        "textureCoords": [
+            [
+                2260,
+                104,
+                "float32"
+            ]
+        ],
+        "type": "Mesh",
+        "vertexCount": 52,
+        "vertices": [
+            180,
+            156,
+            "float32"
+        ]
+    },
+    "packed_candy_left/packed_candy_left.group": {
+        "libraryRefs": [
+            "packed_candy_left/entities/RootNode.entity",
+            "packed_candy_left/entities/packed_candy_left.entity",
+            "packed_candy_left/meshes/packed_candy_left.mesh",
+            "packed_candy_left/binaries/1391124459_data.bin"
+        ],
+        "name": "packed_candy_left",
+        "ref": "packed_candy_left/packed_candy_left.group"
+    },
+    "packed_candy_right/entities/RootNode.entity": {
+        "components": {
+            "transform": {
+                "rotation": [
+                    0,
+                    0,
+                    0
+                ],
+                "scale": [
+                    1,
+                    1,
+                    1
+                ],
+                "translation": [
+                    0,
+                    0,
+                    0
+                ]
+            }
+        },
+        "hidden": false,
+        "name": "packed_candy_right",
+        "nodeType": "Null",
+        "ref": "packed_candy_right/entities/RootNode.entity"
+    },
+    "packed_candy_right/entities/packed_candy_right.entity": {
+        "components": {
+            "meshData": {
+                "meshRef": "packed_candy_right/meshes/packed_candy_right.mesh"
+            },
+            "meshRenderer": {
+                "castShadows": true,
+                "cullMode": "Dynamic",
+                "hidden": false,
+                "materialRefs": [
+                    "packed_candy/materials/packed_candy_mat.material"
+                ],
+                "receiveShadows": true,
+                "reflectable": false
+            },
+            "transform": {
+                "parentRef": "packed_candy_right/entities/RootNode.entity",
+                "rotation": [
+                    90,
+                    0,
+                    0
+                ],
+                "scale": [
+                    1.5,
+                    1.5,
+                    1.5
+                ],
+                "translation": [
+                    0,
+                    0,
+                    0
+                ]
+            }
+        },
+        "name": "Mesh",
+        "nodeType": "Mesh",
+        "ref": "packed_candy_right/entities/packed_candy_right.entity"
+    },
+    "packed_candy_right/meshes/packed_candy_right.mesh": {
+        "binaryRef": "packed_candy_right/binaries/1391124465_data.bin",
+        "boundingVolume": {
+            "max": [
+                1.269107,
+                0.35105,
+                0.445745
+            ],
+            "min": [
+                -0.020582,
+                -0.35105,
+                -0.445745
+            ],
+            "type": "BoundingBox"
+        },
+        "colors": [],
+        "indexLengths": [
+            180
+        ],
+        "indexModes": [
+            "Triangles"
+        ],
+        "indices": [
+            0,
+            180,
+            "uint8"
+        ],
+        "name": "Utf8_error_0",
+        "normals": [
+            804,
+            156,
+            "float32"
+        ],
+        "tangents": [
+            1428,
+            208,
+            "float32"
+        ],
+        "textureCoords": [
+            [
+                2260,
+                104,
+                "float32"
+            ]
+        ],
+        "type": "Mesh",
+        "vertexCount": 52,
+        "vertices": [
+            180,
+            156,
+            "float32"
+        ]
+    },
+    "packed_candy_right/packed_candy_right.group": {
+        "libraryRefs": [
+            "packed_candy_right/entities/RootNode.entity",
+            "packed_candy_right/meshes/packed_candy_right.mesh",
+            "packed_candy_right/entities/packed_candy_right.entity",
+            "packed_candy_right/binaries/1391124465_data.bin"
+        ],
+        "name": "packed_candy_right",
+        "ref": "packed_candy_right/packed_candy_right.group"
+    },
+    "project.project": {
+        "backgroundColor": [
+            0.75,
+            0.76,
+            0.78,
+            1
+        ],
+        "created": "2014-01-30T23:25:07.879448+00:00",
+        "deleted": false,
+        "edit": [],
+        "entityRefs": [
+            "packed_candy/entities/packed_candy.entity",
+            "packed_candy/entities/RootNode.entity",
+            "packed_candy_left/entities/RootNode.entity",
+            "packed_candy_left/entities/packed_candy_left.entity",
+            "packed_candy_right/entities/RootNode.entity",
+            "packed_candy_right/entities/packed_candy_right.entity"
+        ],
+        "fogColor": [
+            1,
+            1,
+            1
+        ],
+        "fogFar": 1000,
+        "fogNear": 0,
+        "globalAmbient": [
+            0,
+            0,
+            0
+        ],
+        "groupRefs": [
+            "root.group",
+            "packed_candy/packed_candy.group",
+            "packed_candy_left/packed_candy_left.group",
+            "packed_candy_right/packed_candy_right.group"
+        ],
+        "id": "2VHhU0BtQjiySbppcC2bLg",
+        "licenseType": "CC0",
+        "modified": "2014-01-30T23:25:32.598914+00:00",
+        "name": "Packed Candy",
+        "originalLicenseType": null,
+        "own": [
+            "h9AeW1X3S1WZYADWuViCyw"
+        ],
+        "parent": null,
+        "public": true,
+        "ref": "project.project",
+        "skybox": {
+            "environmentType": 1,
+            "imageUrls": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "rotation": 0,
+            "shape": "Box"
+        },
+        "useFog": false,
+        "view": []
+    },
+    "root.group": {
+        "libraryRefs": [],
+        "name": "root",
+        "ref": "root.group"
+    }
+}
